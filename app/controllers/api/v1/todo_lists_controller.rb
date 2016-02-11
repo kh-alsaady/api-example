@@ -7,7 +7,7 @@ class Api::V1::TodoListsController < Api::V1::BaseController
 	short "API's for managing TodoList Actions"
   end
   
-  # common parametere
+  # common parameter
   def_param_group :todo_list do
 	param :title, String, desc: 'title of todo_list item', required: true
 	param :description, String, desc: 'description of todo_list item', required: true

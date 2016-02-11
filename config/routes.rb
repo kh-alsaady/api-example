@@ -2,10 +2,14 @@ Rails.application.routes.draw do
   devise_for :users
   # for api documentations
   apipie
-  namespace :api do
+  namespace :api, default: {format: 'json'} do
     namespace :v1 do
-      resources :todo_lists, except: [:new, :edit], default: {format: 'json'} do
+      resources :todo_lists, except: [:new, :edit] do
         resources :todo_items, except: [:new, :edit], default: {format: 'json'}
+      end
+      
+      resources :users, except: [:new, :edit], path: 'user', as: 'user' do
+        get :list, to: 'users#index', on: :collection
       end
     end
   end
