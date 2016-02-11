@@ -13,12 +13,15 @@ class Api::V1::TodoItemsController < Api::V1::BaseController
   def_param_group :todo_item do
     param :title, String, 'title of todo_item', required: true
     param :description, String, 'description of todo_item', required: true
+    param :avatar, ActionDispatch::Http::UploadedFile, desc: 'an image for todo_list', optional: true
   end
   
   # for apipie documentations
   api 'GET', "/api/v1/todo_lists/:todo_list_id/todo_items", "Get todo_items for specific todo_list"  
   def index    
-    @todo_items = @todo_list.todo_items.map{ |item| serialize item}
+    @todo_items = @todo_list.todo_items
+    # serialize @todo_items
+    @todo_items = ActiveModel::ArraySerializer.new @todo_items, each_serializer: TodoItemSerializer
     render json: {success: true, message: I18n.t('success.success_msg'), todo_items: @todo_items}, status: 200
   end
   
@@ -65,7 +68,7 @@ class Api::V1::TodoItemsController < Api::V1::BaseController
   # ============= Private functions ======================= #
   private
     def todo_item_params
-        params.permit :title, :description, :todo_list_id
+        params.permit :title, :description, :todo_list_id, :avatar
     end
     
     def set_todo_item
