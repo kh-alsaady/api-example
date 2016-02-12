@@ -1,17 +1,27 @@
 Rails.application.routes.draw do
+  # for generate devise routes
   devise_for :users
+  
   # for api documentations
   apipie
+  
   namespace :api, default: {format: 'json'} do
+    
     namespace :v1 do
+      
       resources :todo_lists, except: [:new, :edit] do
         resources :todo_items, except: [:new, :edit], default: {format: 'json'}
       end
       
       resources :users, except: [:new, :edit], path: 'user', as: 'user' do
-        get :list, to: 'users#index', on: :collection
+        post :register, to: 'users#create', on: :collection        
+        get :list,      to: 'users#index',  on: :collection
+        post :login,                        on: :collection
+        post :logout,                       on: :collection
       end
+      
     end
+    
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

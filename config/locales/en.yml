@@ -24,18 +24,20 @@ en:
     success_add_msg:    "todo_list added successfully"
     success_update_msg: "todo_list updated successfully"
     success_del_msg:    "todo_list deleted successfully"    
-    success_msg: "Request completed successfully"
+    success_msg:        "Request completed successfully"
 
   todo_item:
-    success_add_msg:    "todo_item added successfully"
-    success_update_msg: "todo_item updated successfully"
-    success_del_msg:    "todo_item deleted successfully"
+    success_add_msg:     "todo_item added successfully"
+    success_update_msg:  "todo_item updated successfully"
+    success_del_msg:     "todo_item deleted successfully"
     todo_list_not_found: 'todo_list not found in database'
     
   user:
     success_add_msg: "User Created successfully"
-    empty:            "No Users Found in database"
-    
+    empty:           "No Users Found in database"
+    success_login:   "User logged in successfully" 
+    faild_login:     'email or password was incorrect'
+    success_logout:   "User logged out successfully" 
   success:
     success_msg: "Request completed successfully"
 

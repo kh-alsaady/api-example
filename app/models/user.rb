@@ -9,13 +9,12 @@ class User < ActiveRecord::Base
          
   # Validations
   validates :password, :password_confirmation, presence: true
-  #validates :email, format: {with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, message: 'Invalid Email Address'}
-
-  private
-
+  
   def ensure_authentication_token
   	self.authentication_token = generate_token 
   end
+  
+  private
 
   # Generate random unique token
   def generate_token
