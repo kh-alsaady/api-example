@@ -19,6 +19,11 @@ Rails.application.routes.draw do
         post :login,                        on: :collection
         post :logout,                       on: :collection
       end
+
+      resources :locations, only: [], path: 'location' do
+        get :details, on: :collection
+        get :long_lat, on: :collection
+      end
       
     end
     
