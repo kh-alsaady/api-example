@@ -16,6 +16,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 gem 'paperclip'
 gem 'unicorn'
 
+# Deploy with Capistrano
+gem 'capistrano', :group => :development
+gem 'capistrano-rails'
+gem 'capistrano-rvm'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
