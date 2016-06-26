@@ -16,17 +16,17 @@ server '54.200.86.42',
   }
 
 
-namespace :deploy do
+# namespace :deploy do
 
-  %w[start stop restart].each do |command|
-    desc 'Manage Unicorn'
-    task command do
-      on roles(:app), in: :sequence, wait: 1 do
-        execute "/etc/init.d/unicorn_api_examples #{command}"
-      end      
-    end
-  end
+#   %w[start stop restart].each do |command|
+#     desc 'Manage Unicorn'
+#     task command do
+#       on roles(:app), in: :sequence, wait: 1 do
+#         execute "/etc/init.d/unicorn_api_examples #{command}"
+#       end      
+#     end
+#   end
 
-  after :publishing, :restart
+#   after :publishing, :restart
 
-end
+# end
