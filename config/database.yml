@@ -13,8 +13,8 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: khalid
-  password: clickapps
+  username: api_example
+  password: api_example
   host: localhost
 
 development:
@@ -49,6 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: 
-  username: api-example
+  database: api_example_production
+  # username: api-example
+  #password: api_example
   password: <%= ENV['API-EXAMPLE_DATABASE_PASSWORD'] %>

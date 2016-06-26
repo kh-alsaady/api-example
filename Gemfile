@@ -14,6 +14,7 @@ gem 'apipie-rails'
 gem 'apipie-params'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 gem 'paperclip'
+gem 'unicorn'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
