@@ -1,0 +1,19 @@
+development:
+  cloud_name: dlsgwegzm
+  api_key: '666543176743926'
+  api_secret: hIq580MEkUveViNZhVxNoQ6uWJA
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dlsgwegzm
+  api_key: '666543176743926'
+  api_secret: hIq580MEkUveViNZhVxNoQ6uWJA
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dlsgwegzm
+  api_key: '666543176743926'
+  api_secret: hIq580MEkUveViNZhVxNoQ6uWJA
+  enhance_image_tag: true
+  static_image_support: false
+

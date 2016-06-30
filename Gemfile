@@ -15,6 +15,15 @@ gem 'apipie-params'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 gem 'paperclip'
 
+# for upload files to cloud and deliver them to end users
+gem 'cloudinary'
+
+# its necessary to run delayed jobs 
+gem "daemons"
+
+# for background jobs
+gem 'delayed_job_active_record'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

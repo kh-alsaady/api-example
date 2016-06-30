@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  
+  get 'delayed_jobs/index'
+
+  resources :test
   # for generate devise routes
-  devise_for :users
+  #devise_for :users
   
   # for api documentations
   apipie
@@ -24,10 +28,17 @@ Rails.application.routes.draw do
         get :details, on: :collection
         get :long_lat, on: :collection
       end
+
+      resources :cloudinary, only: [] do
+        post :upload, on: :collection       
+      end
       
     end
     
   end
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

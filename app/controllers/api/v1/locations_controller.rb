@@ -46,6 +46,15 @@ class Api::V1::LocationsController < Api::V1::BaseController
 		end			
 	end	 
 
+	api :GET, '/v1/location/test', 'Get location details from google api'
+		param :latitude,  Float,        'latitude of the location',  required: true
+		param :longitude, Float,        'longitude of the location', required: true
+		param :radius,    Float,        'radius in km',              required: true
+		param :lang_code, ['en', 'ar'], 'Select language',    required: true
+	def boundries
+
+	end
+
 	private 	
 	
 	def location_details

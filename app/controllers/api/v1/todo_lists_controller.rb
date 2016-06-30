@@ -1,7 +1,8 @@
 class Api::V1::TodoListsController < Api::V1::BaseController
   # ============= callbacks =================== #
   before_action :set_todo_list, only: [:show, :update, :destroy]
-  
+  skip_before_action :authenticate
+
   # resource description used by apipie
   resource_description do
 	short "API's for managing TodoList Actions"

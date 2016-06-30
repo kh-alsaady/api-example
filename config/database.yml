@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: 
-  username: api-example
-  password: <%= ENV['API-EXAMPLE_DATABASE_PASSWORD'] %>
+  #database: 
+  #username: api-example
+  #password: <%= ENV['API-EXAMPLE_DATABASE_PASSWORD'] %>
