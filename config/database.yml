@@ -13,13 +13,20 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: khalid
-  password: clickapps
+  username: api_example
+  password: api_example
   host: localhost
 
 development:
   <<: *default
   database: api_example
+
+dev:
+  <<: *default
+  username: khalid
+  password: clickapps
+  host: dev-db1.caslz1ljbckv.us-west-2.rds.amazonaws.com
+  database: khaliddb
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -49,6 +56,13 @@ test:
 #
 production:
   <<: *default
+<<<<<<< HEAD
   #database: 
   #username: api-example
   #password: <%= ENV['API-EXAMPLE_DATABASE_PASSWORD'] %>
+=======
+  database: api_example_production
+  # username: api-example
+  #password: api_example
+  password: <%= ENV['API-EXAMPLE_DATABASE_PASSWORD'] %>
+>>>>>>> d6690104c268c4e1ad5778378fe440bd620ac968

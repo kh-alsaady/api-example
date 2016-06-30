@@ -14,6 +14,12 @@ gem 'apipie-rails'
 gem 'apipie-params'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 gem 'paperclip'
+gem 'unicorn'
+
+# Deploy with Capistrano
+gem 'capistrano', :group => :development
+gem 'capistrano-rails'
+gem 'capistrano-rvm'
 
 # for upload files to cloud and deliver them to end users
 gem 'cloudinary'
