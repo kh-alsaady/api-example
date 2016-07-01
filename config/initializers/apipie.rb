@@ -12,8 +12,9 @@ end
 # Override Apipie invalid parameter return message
 Apipie::ParamInvalid.class_eval do
   def to_s
-	#"Invalid parameter '#{@param}' value #{@value.inspect}: #{@error}"
-	"#{@param} #{@error}"
+	 #{}"Invalid parameter '#{@param}' value #{@value}: #{@error}"
+
+	 "#{@param} #{@error.gsub('<code>', '').gsub('</code>', '')}"
   end
 end
 
@@ -21,6 +22,6 @@ end
 # Override Apipie invalid parameter return message
 Apipie::ParamMissing.class_eval do
   def to_s
-	"Missing parameter #{@param}"
+	"Missing parameter : #{@param.name}"
   end
 end

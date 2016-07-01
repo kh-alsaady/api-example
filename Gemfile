@@ -24,11 +24,14 @@ gem 'capistrano-rvm'
 # for upload files to cloud and deliver them to end users
 gem 'cloudinary'
 
-# its necessary to run delayed jobs 
+# its necessary to run delayed jobs
 gem "daemons"
 
 # for background jobs
 gem 'delayed_job_active_record'
+
+gem 'byebug'
+gem 'stomp'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
