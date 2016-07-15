@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   get 'delayed_jobs/index'
 
 
-  resources :test
+  resources :test do
+
+  end
   # for generate devise routes
   #devise_for :users
 
@@ -33,8 +35,9 @@ Rails.application.routes.draw do
         post :upload, on: :collection
       end
 
-      resources :test, only: [] do
+      resources :test, only: [:index] do
         get :check_vehicle_boundary, on: :collection
+        get :for_test, on: :collection
       end
 
     end
