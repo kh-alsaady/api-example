@@ -6,9 +6,9 @@ class TodoItem < ActiveRecord::Base
   # ========== validations =================== #
   validates :title, :description, :todo_list_id, presence: true
   validates :title, :description, uniqueness: true
-  
+  scope :last_five, lambda{ |x| limit x}
   # ========== associations =================== #
   belongs_to :todo_list
 
-  
+
 end

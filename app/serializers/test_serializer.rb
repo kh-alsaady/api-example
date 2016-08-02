@@ -1,7 +1,10 @@
-class TestSerializer < ActiveModel::Serializer
-  attributes :id, :value
+class TestSerializer < ApplicationSerializer
+  attributes :id, :title, :value
+
 
   def value
-  	scope[:lang_code]
+    # access scope as following
+  '	tested_value'
+    # scope
   end
 end

@@ -40,6 +40,10 @@ Rails.application.routes.draw do
         get :for_test, on: :collection
       end
 
+      resources :active_model_serializer_examples, only: [] do
+        get :test_scope,        on: :collection
+      end
+
     end
 
   end
