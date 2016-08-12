@@ -35,6 +35,12 @@ gem 'stomp'
 gem 'bunny'
 gem 'responders'
 
+#send sms
+gem 'twilio-ruby'
+
+# for send email
+gem 'mandrill-api'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

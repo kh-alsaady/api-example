@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'delayed_jobs/index'
 
 
@@ -44,6 +45,11 @@ Rails.application.routes.draw do
         get :test_scope,        on: :collection
       end
 
+      resources :twilio_examples, only: [], as: 'twilio', path: 'twilio' do
+          post :send_sms,           on: :collection
+          post :receive_sms,        on: :collection
+          post :twilio_callback,    on: :collection
+      end
     end
 
   end
