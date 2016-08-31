@@ -23,14 +23,14 @@ class Api::V1::TwilioExamplesController < ApplicationController
         # media_url: 'http://www.tutorialspoint.com/estimation_techniques/images/functions.jpg'
         # ProvideFeedback: true,
         # StatusCallback: 'http://1cf23bd7.ngrok.io/api/v1/twilio/twilio_callback'
-        # MessageStatus: ''
+
       )
 
       msg_id = msg.sid
       message = client.messages.get(msg_id)
 
       render json: {message: true, message_status: message.status }
-      
+
     rescue Exception => e
       render json: {message: false, data: e.message}
     end
